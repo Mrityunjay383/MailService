@@ -4,4 +4,6 @@ const genKey = () => {
        + Date.now().toString(16).slice(0);
 };
 
+
+
 module.exports = {genKey};

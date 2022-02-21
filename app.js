@@ -5,14 +5,19 @@ const ejs = require("ejs");
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
+var cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
 // Routers
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
+const dashboardRouter = require("./routes/dashboard");
+const otpRouter = require("./routes/otp");
 
 const app = express();
+
+app.use(cors());
 
 app.set('view engine', 'ejs');
 
@@ -33,6 +38,8 @@ mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTop
 // Using Routes
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/dashboard", dashboardRouter);
+app.use("/otp", otpRouter);
 
 
 app.listen(port, () => {

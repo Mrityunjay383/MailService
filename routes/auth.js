@@ -3,7 +3,6 @@ const router = express.Router();
 const session = require('express-session');
 const passport = require('passport');
 
-const { auth, isLogedIn } = require('../midelwares/auth.js');
 
 const { genKey } = require('../midelwares/helper.js');
 
@@ -35,7 +34,7 @@ router.get('/github/mailS',
   }
 );
 
-router.get("/", isLogedIn, (req, res) => {
+router.get("/", (req, res) => {
 
   res.render("register");
 });
