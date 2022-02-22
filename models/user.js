@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
   noOfCalls: Number,
   googleId: String,
   githubId: String,
-  username: String
+  username: String,
+  mailDetails: Object
 });
 
 userSchema.plugin(passportLocalMongoose);

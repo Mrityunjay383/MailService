@@ -21,6 +21,7 @@ router.get("/:apiKey/:reciverMail", (req, res) => {
         const output = `
           <div style="text-align: center">
             <h3>OTP: ${otp}</h3>
+            <p>${foundUser.mailDetails.message}</p>
             <p><b>Thank you.</b></p>
           </div>
         `;
@@ -41,9 +42,9 @@ router.get("/:apiKey/:reciverMail", (req, res) => {
         });
 
         var mailOptions = {
-          from: `${foundUser.name.split(" ")[0]}<${process.env.AUTHER_GMAILID}>`,
+          from: `${foundUser.mailDetails.senderName}<${process.env.AUTHER_GMAILID}>`,
           to: reciverMail, //Change reciving email here
-          subject: `OTP for Registration`,
+          subject: `${foundUser.mailDetails.mailSubject}`,
           text: '',
           html: output
         };

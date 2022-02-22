@@ -1,1 +1,20 @@
 <h1>Dashboard page</h1>
+
+<div class="">
+  <p>Hello <%= userName%></p>
+  <p>You have <%= noOfCalls%> calls left <button type="button" name="button">Add More</button></p>
+  <p>Your API Key: <%= apiKey%></p>
+</div>
+
+<div class="">
+  <h2>Add/Update Mail details</h2>
+
+  <form class="" action="/dashboard/addMailDetails" method="post">
+    <input type="text" name="senderName" placeholder="Set Sender name" ">
+    <br>
+    <input type="text" name="sub" placeholder="Set Mail Subject" >
+    <br>
+    <textarea name="message" rows="3" cols="40" placeholder="Any personalize message you want to add to the mail"></textarea>
+    <button type="submit" name="button">Update</button>
+  </form>
+</div>
