@@ -1,7 +1,10 @@
 <h1>Mail Service</h1>
 <%if(isLogedIn){%>
   <p>Loged In</p>
+  <a href="/dashboard">Dashboard</a>
   <button type="button" name="button">
     <a href="/auth/logout">LogOut</a>
   </button>
+<%}else{%>
+  <a href="/auth">Auth</a>
 <%}%>
