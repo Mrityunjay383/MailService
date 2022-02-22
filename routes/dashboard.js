@@ -6,7 +6,7 @@ const { auth, isLogedIn } = require('../midelwares/auth.js');
 const User = require("../models/user");
 
 
-// Dashboard root, rendering page
+// Dashboard route, rendering page
 router.get("/", isLogedIn, auth, (req, res) => {
 
   User.findOne({_id: req.user._id}, (err, foundUser) => {
@@ -20,8 +20,10 @@ router.get("/", isLogedIn, auth, (req, res) => {
 });
 
 //Updating mail details routes
-router.post("/addMailDetails", auth, (req, res) => {
+router.post("/updateMailDetails", auth, (req, res) => {
   User.findOne({_id: req.user._id}, (err, foundUser) => {
+
+    // Updating mailDetails accouding to user wants
     const mailDetails = {
       senderName: req.body.senderName,
       mailSubject: req.body.sub,
