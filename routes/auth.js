@@ -12,7 +12,7 @@ const User = require("../models/user");
 router.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
-// Google OAuth callback
+
 router.get('/google/mailS',
   passport.authenticate('google', { failureRedirect: '/auth' }),
   function(req, res) {
@@ -25,7 +25,7 @@ router.get('/google/mailS',
 router.get('/github',
   passport.authenticate('github', { scope: [ 'user:email' ] })
 );
-// Github OAuth callback
+
 router.get('/github/mailS',
   passport.authenticate('github', { failureRedirect: '/auth' }),
   function(req, res) {
@@ -34,13 +34,54 @@ router.get('/github/mailS',
   }
 );
 
-// Rendring registor page on route /auth
 router.get("/", (req, res) => {
 
   res.render("register");
 });
 
-// Logout Route
+
+// Local Authentication
+router.post("/login", (req, res) => {
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password
+  });
+
+  req.login(user, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      passport.authenticate("local")(req, res, () => {
+        res.redirect("/");
+      });
+    }
+  });
+});
+
+router.post("/register", (req, res) => {
+
+  const reqUser = {
+    name: req.body.name,
+    username: req.body.username,
+    password: req.body.password,
+  }
+
+  User.register({username: reqUser.username}, reqUser.password, (err, user) => {
+      if (err) {
+        console.log(err);
+        res.redirect("/auth");
+      } else {
+        user.name = reqUser.name;
+
+        user.save();
+      }
+
+      passport.authenticate("local")(req, res, () => {
+        res.redirect("/");
+      });
+  });
+});
+
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");

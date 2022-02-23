@@ -2,7 +2,11 @@
 
 <div class="">
   <p>Hello <%= userName%></p>
-  <p>You have <%= noOfCalls%> calls left <button type="button" name="button">Add More</button></p>
+  <p>You have <%= noOfCalls%> calls left
+    <button type="button" name="button">
+      <a href="/dashboard/add-credit">Add More</a>
+    </button>
+  </p>
   <p>Your API Key: <%= apiKey%></p>
 </div>
 
