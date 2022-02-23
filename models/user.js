@@ -10,8 +10,14 @@ const {genKey} = require('../midelwares/helper.js');
 
 const userSchema = new mongoose.Schema({
   name: String,
-  apiKey: String,
-  noOfCalls: Number,
+  apiKey: {
+    type: String,
+    default: genKey()
+  },
+  noOfCalls: {
+    type: Number,
+    default: 100
+  },
   googleId: String,
   githubId: String,
   username: String,
@@ -59,8 +65,7 @@ passport.use(new GoogleStrategy({
   function(accessToken, refreshToken, profile, cb) {//callback with profile details from google
     User.findOrCreate({ username: profile.emails[0].value, googleId: profile.id }, function (err, user) {
       if(!user.apiKey){
-          user.apiKey = genKey();//genrating unique Key for future User
-          user.noOfCalls = 100;//Giging 100 credits on new user Registration
+          // user.apiKey = genKey();//genrating unique Key for future User
           user.name = profile.displayName;
           user.save();
       }
@@ -78,8 +83,7 @@ passport.use(new GitHubStrategy({
   function(accessToken, refreshToken, profile, done) {//callback with profile details from github
     User.findOrCreate({ username: profile.username, githubId: profile.id }, function (err, user) {
       if(!user.apiKey){
-          user.apiKey = genKey();//genrating unique Key for future User
-          user.noOfCalls = 100;//Giging 100 credits on new user Registration
+          // user.apiKey = genKey();//genrating unique Key for future User
           user.name = profile.displayName;
           user.save();
       }
