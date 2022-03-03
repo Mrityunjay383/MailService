@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     default: {
       senderName: "MailBot",
       mailSubject: "OTP for Registration",
-      message: "A example of good thank you message"
+      message: "An example of a good thank you message"
     }
   }
 });
