@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mail Service</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/style/index.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        Mail Service
+      </div>
+      <div class="links">
+
+        <%if(isLogedIn){%>
+          <a href="/dashboard">My Dashboard</a>
+          <a class="brd" href="/auth/logout">LogOut</a>
+        <%}else{%>
+          <a class="brd" href="/auth">Login</a>
+        <%}%>
+
+
+      </div>
+    </header>
