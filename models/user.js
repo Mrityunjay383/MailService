@@ -64,7 +64,7 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {//callback with profile details from google
     User.findOrCreate({ username: profile.emails[0].value, googleId: profile.id }, function (err, user) {
-      if(!user.apiKey){
+      if(!user.name){
           // user.apiKey = genKey();//genrating unique Key for future User
           user.name = profile.displayName;
           user.save();
@@ -82,7 +82,7 @@ passport.use(new GitHubStrategy({
   },
   function(accessToken, refreshToken, profile, done) {//callback with profile details from github
     User.findOrCreate({ username: profile.username, githubId: profile.id }, function (err, user) {
-      if(!user.apiKey){
+      if(!user.name){
           // user.apiKey = genKey();//genrating unique Key for future User
           user.name = profile.displayName;
           user.save();
