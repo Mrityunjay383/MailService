@@ -4,13 +4,18 @@
       <div class="dashboardPage">
 
         <div class="">
-          <p>Hello <%= userName%></p>
+          <h4>Hello <%= userName%></h4>
           <p>You have <%= noOfCalls%> calls left
-            <button type="button" name="button">
-              <a href="/dashboard/add-credit">Add More</a>
-            </button>
+
+          <a class="aCBtn" href="/dashboard/add-credit">
+            <button type="button" class="btn btn-success" name="button">Add More</button>
+          </a>
+
           </p>
-          <p>Your API Key: <%= apiKey%></p>
+          <p>
+            Your API Key: <%= apiKey%>
+            <button class="copyBtn" onclick="CopyMe('<%= apiKey%>')"><i class="fa-solid fa-copy"></i></button>
+          </p>
         </div>
 
         <div class="">
@@ -40,5 +45,6 @@
       </div>
     </section>
 
+    <script type="text/javascript" src="/script/index.js"></script>
   </body>
 </html>

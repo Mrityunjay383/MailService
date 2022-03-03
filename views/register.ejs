@@ -1,20 +1,16 @@
-<form class="" action="/auth/register" method="post">
-  <h2>Register</h2>
-  <input type="text" name="name" placeholder="Name">
-  <input type="email" name="username" placeholder="Email Address">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit" name="button">Register</button>
-</form>
-<br><br>
-<form class="" action="/auth/login" method="post">
-  <h2>Login</h2>
-  <input type="email" name="username" placeholder="Email Address">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit" name="button">Login</button>
-</form>
+<%- include("header") -%>
 
-<br><br>
+<section class="sec1">
+  <div class="authCon">
+    <a id="github-button" href="/auth/google" class="btn btn-block btn-social btn-google">
+      <i class="fa-brands fa-google"></i> Sign in with Google
+    </a>
+    <a id="github-button" href="/auth/github" class="btn btn-block btn-social btn-github">
+      <i class="fa-brands fa-github"></i> Sign in with GitHub
+    </a>
+  </div>
+</section>
 
-<a href="/auth/google">Continue with Google</a>
 
-<a href="/auth/github">Continue with GitHub</a>
+  </body>
+</html>

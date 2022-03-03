@@ -52,11 +52,36 @@ a {
   align-items: center;
   height: 100%;
 }
-
+.lanImg{
+  width: 30vw;
+  position: absolute;
+  right: 4%;
+}
 .dashboardPage{
   display: flex;
   justify-content: space-between;
   margin-top: 15vh;
 }
+
+.copyBtn{
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.authCon{
+  height: 100%;
+  width: 30vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* .aCBtn{
+  color: #fff;
+  height: 100%;
+  width: 100%;
+} */
+
 /* font-family: 'Balsamiq Sans', cursive;
 font-family: 'Josefin Sans', sans-serif; */

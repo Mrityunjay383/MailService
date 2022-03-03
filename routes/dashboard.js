@@ -43,7 +43,7 @@ router.post("/updateMailDetails", auth, (req, res) => {
 });
 
 router.get("/add-credit", auth, (req, res) => {
-  res.render("addCredits", {razorpayKEYID: process.env.RAZORPAY_KEY_ID, name: req.user.name});
+  res.render("addCredits", {razorpayKEYID: process.env.RAZORPAY_KEY_ID, name: req.user.name, isLogedIn: req.isLogedIn});
 });
 
 // Razorpay generating new oder router

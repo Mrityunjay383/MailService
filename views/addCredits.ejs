@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<%- include("header") -%>
 
-    <p>INR 1 = 100 calls</p>
-    <input id="amountVal" type="text" placeholder="Enter Amount">
-    <button id="rzp-button1">Pay</button>
+    <section class="sec1">
+      <p></p>
+      <div class="form-group">
+        <label for="sub">INR 1 = 100 calls: </label>
+        <input id="amountVal" type="text" placeholder="Enter Amount">
+      </div>
+      <button class="btn btn-success" id="rzp-button1">Pay</button>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

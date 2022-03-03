@@ -5,6 +5,7 @@ const passport = require('passport');
 
 
 const { genKey } = require('../midelwares/helper.js');
+const { isLogedIn } = require('../midelwares/auth.js');
 
 const User = require("../models/user");
 
@@ -34,10 +35,14 @@ router.get('/github/mailS',
   }
 );
 
-router.get("/", (req, res) => {
+router.get("/", isLogedIn, (req, res) => {
 
-  res.render("register");
+  res.render("register", {isLogedIn: req.isLogedIn});
 });
+
+router.get("/dev", (req, res) => {
+  res.render("devAuth", {isLogedIn: req.isLogedIn});
+})
 
 
 // Local Authentication
