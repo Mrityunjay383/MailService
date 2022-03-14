@@ -10,7 +10,7 @@
           Documentation <i class="fas fa-chevron-down workI"></i>
         </a>
 
-        <a href="/auth" class="buttons">
+        <a href=<% isLogedIn ? '/dashboard' : '/auth'%> class="buttons">
           <button class="blob-btn">
             <% if(!isLogedIn){%>
               Get Started <i class="fab fa-google-play tryI"></i>
