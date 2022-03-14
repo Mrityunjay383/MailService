@@ -9,14 +9,11 @@
         <a class="aCon1" href="#td">
           Documentation <i class="fas fa-chevron-down workI"></i>
         </a>
-
-        <a href="<% isLogedIn ? '/dashboard' : '/auth'%>" class="buttons">
+        
+        <% if(!isLogedIn){%>
+        <a href="/auth" class="buttons">
           <button class="blob-btn">
-            <% if(!isLogedIn){%>
-              Get Started <i class="fab fa-google-play tryI"></i>
-            <%}else{%>
-              Dashboard
-            <%}%>
+            Get Started <i class="fab fa-google-play tryI"></i>
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">
                 <span class="blob-btn__blob"></span>
@@ -27,6 +24,21 @@
             </span>
           </button>
         </a>
+       <%}else{%>
+        <a href="/dashboard" class="buttons">
+          <button class="blob-btn">
+            Dashboard
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </a>
+       <%}%>
       </div>
     </div>
     <div class="right">
