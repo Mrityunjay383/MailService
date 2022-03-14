@@ -1,11 +1,67 @@
 <%- include("header") -%>
 
-    <section class="sec1">
-      <div class="heading">
-        <h2>Now OTP verification is just a <br>single request away</h2>
-        <img class="lanImg" src="https://static.vecteezy.com/system/resources/previews/002/076/446/large_2x/authentication-code-erp-illustration-isometric-style-vector.jpg" alt="">
-      </div>
-    </section>
+<section class="sec1">
+  <div class="heading">
+    <div class="left">
+      <h2>Now OTP verification is just a <br>single request away</h2>
 
-  </body>
+      <div class="BtnCon">
+        <a class="aCon1" href="#td">
+          Documentation <i class="fas fa-chevron-down workI"></i>
+        </a>
+
+        <% if(!isLogedIn){%>
+        <a href="/auth" class="buttons">
+          <button class="blob-btn">
+            Get Started <i class="fab fa-google-play tryI"></i>
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </a>
+        <%}%>
+      </div>
+    </div>
+    <div class="right">
+      <img class="lanImg" src="/lanImg.png" alt="">
+
+    </div>
+  </div>
+
+  <div id="td" class="htw">
+    <h3>How to use the API</h3>
+
+    <div class="htdSec">
+      <div class="htdLest">
+        <h4>API EndPoint to send and validate OTP</h4>
+      </div>
+      <div class="htdRight">
+        <img src="/httpsEx.png" alt="">
+      </div>
+    </div>
+
+    <div class="htdSec">
+      <div class="htdLest">
+        <img src="/codeEx.png" alt="">
+      </div>
+      <div class="htdRight">
+        <h4>AJAX Example Code to validate OTP</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- JQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/script/index.js"></script>
+
+</body>
+
 </html>

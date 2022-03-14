@@ -13,7 +13,7 @@ router.get("/:apiKey/:reciverMail", (req, res) => {
  User.findOne({apiKey}, async (err, foundUser) => {
     if(foundUser){//checking if the API KEy is Valid
 
-      if(foundUser.noOfCalls > 0){//Checking if your have api calls left
+      if(foundUser.noOfCalls > 0){//Checking if user have api calls left
 
         let otp = Math.floor(Math.random() * 100000);//Generating a randon number
 
@@ -67,7 +67,7 @@ router.get("/:apiKey/:reciverMail", (req, res) => {
 
       }else{
         //If user didnt have credits left
-        res.send("You have exhausted api calls credit, please buy some more!!!");
+        res.status(400).send("You have exhausted api calls credit, please buy some more!!!");
       }
 
     }else{

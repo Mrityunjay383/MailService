@@ -1,75 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap');
 
-
-body{
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Balsamiq Sans', cursive;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 4%;
-  align-items: center;
-  box-shadow: 0px 3px 2px 1px rgb(0 0 0 / 20%);
-  z-index: 100;
-  position: sticky;
-}
-
-a {
-  text-decoration: none;
-  color: #212121;
-  margin: 5px;
-  font-size: 16px;
-  text-shadow: 1px 1px rgb(0 0 0 / 20%);
-}
-
-.logo h1{
-  font-size: 2.5rem;
-  font-weight: bolder;
-}
-
-.brd {
-    border: 1px solid #212121;
-    padding: 10px 20px;
-}
-
-.sec1{
+.sec1 {
   height: 88vh;
   padding: 15px 4%;
   background-color: #FAFAFA;
 }
 
-.sec1 h2{
+.sec1 h2 {
   font-size: 3rem;
 }
 
-.heading{
+.heading {
   display: flex;
   align-items: center;
   height: 100%;
+  justify-content: space-between;
 }
-.lanImg{
+
+.lanImg {
   width: 30vw;
-  position: absolute;
-  right: 4%;
+  position: relative;
+  right: 0;
 }
-.dashboardPage{
+
+.dashboardPage {
   display: flex;
   justify-content: space-between;
   margin-top: 15vh;
 }
 
-.copyBtn{
+.copyBtn {
   background-color: inherit;
   border: 0;
   cursor: pointer;
 }
 
-.authCon{
+.authCon {
   height: 100%;
   width: 30vw;
   margin: auto;
@@ -77,11 +43,165 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-/* .aCBtn{
-  color: #fff;
-  height: 100%;
-  width: 100%;
-} */
 
-/* font-family: 'Balsamiq Sans', cursive;
-font-family: 'Josefin Sans', sans-serif; */
+
+
+/* Button Animations */
+/*Root Variables*/
+:root {
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+.BtnCon{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5vh;
+}
+
+.aCon1{
+  /* font-family: 'Averia Serif Libre', cursive; */
+  padding: 13px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: #69A9FF;
+  color: #444;
+  margin-right: 15px;
+  box-shadow: hsla(210, 40%, 52%, .4) 2px 2px 22px;
+}
+.aCon1:hover{
+  text-decoration: none;
+  color: #444;
+}
+
+/* lanBody con1 Button */
+.buttons {
+  border-radius: 15px;
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+}
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 13px 20px;
+  text-align: center;
+  color: #69A9FF;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+.blob-btn:hover {
+  color: #555;
+  border-radius: 10px;
+}
+.blob-btn:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: inherit;
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #69A9FF;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+
+
+/* Icon Animation */
+.iconA{
+    transform: translateY(8px);
+    transition: ease 0.8s;
+}
+
+
+
+.htw{
+  padding-top: 15vh;
+}
+.htw h3{
+  text-align: center;
+}
+
+.htdSec{
+  display: flex;
+  justify-content: space-between;
+  padding: 15vh 0;
+  /* align-items: center; */
+}
+.htdSec img{
+  width: 45vw;
+}
+.htdSec h4{
+  position: sticky;
+  top: 200px;
+  padding: 25px;
+}

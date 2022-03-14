@@ -9,3 +9,11 @@ function CopyMe(TextToCopy) {
 
   alert("Copied: " + TempText.value);
 }
+
+
+//Icon Animation
+$('.aCon1').hover( () =>{
+    $(".workI").addClass("iconA");
+}, () => {
+    $(".workI").removeClass("iconA");
+});
