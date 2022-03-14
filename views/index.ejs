@@ -10,10 +10,13 @@
           Documentation <i class="fas fa-chevron-down workI"></i>
         </a>
 
-        <% if(!isLogedIn){%>
         <a href="/auth" class="buttons">
           <button class="blob-btn">
-            Get Started <i class="fab fa-google-play tryI"></i>
+            <% if(!isLogedIn){%>
+              Get Started <i class="fab fa-google-play tryI"></i>
+            <%}else{%>
+              Dashboard
+            <%}%>
             <span class="blob-btn__inner">
               <span class="blob-btn__blobs">
                 <span class="blob-btn__blob"></span>
@@ -24,7 +27,6 @@
             </span>
           </button>
         </a>
-        <%}%>
       </div>
     </div>
     <div class="right">
