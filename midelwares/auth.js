@@ -8,6 +8,9 @@ function auth(req, res, next){
 }
 
 function isLogedIn(req, res, next){
+
+  console.log(`#20238922818844 req.isAuthenticated()`, req.isAuthenticated())
+
   if(req.isAuthenticated()){
     req.isLogedIn = true;
   }else{
