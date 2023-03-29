@@ -17,6 +17,7 @@ router.get('/google',
 router.get('/google/mailS',
   passport.authenticate('google', { failureRedirect: '/auth' }),
   function(req, res) {
+    req.isLogedIn = true;
     // Successful authentication, redirect home.
     res.redirect('/');
   }
